@@ -16,5 +16,5 @@ jobs:
         docker login docker.pkg.github.com --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
         docker push docker.pkg.github.com/k8shiro/github_docker_push_example/${IMAGE_NAME}
       env:
-          DOCKER_USERNAME: ${{ secrets.GITHUB_DOCKER_USERNAME }} # リポジトリのsecretsとして定義した値を環境変数に渡す
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }} # リポジトリのsecretsとして定義した値を環境変数に渡す
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
